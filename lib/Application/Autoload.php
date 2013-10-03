@@ -1,10 +1,4 @@
 <?php
-/**
- * Autoloader class 
- * PSR-0 compliant autoloader
- * @author Miroslav Milosevic <m.maksa@gmail.com>
- */
-
 class Autoloader {
 
     private $_directory;
