@@ -1,0 +1,29 @@
+Options +FollowSymlinks
+RewriteEngine On
+RewriteBase /
+
+#RewriteRule ^index.php?mod=(.*)&ctrl=(.*)?$ /$1/$2 [R]
+
+#RewriteCond %{REQUEST_URI} !^/themes/
+#RewriteCond %{REQUEST_URI} !^/common/
+#RewriteCond %{REQUEST_URI} !^/admin/
+#RewriteCond %{REQUEST_URI} !^/UserFiles/
+RewriteRule ^(.*)/(.*)/(.*)?$ index.php?mod=$1&ctrl=$2&act=$3& [L]
+
+
+
+#rewrite rules for admin
+#RewriteRule ^admin$ index.php?mod=admin&ctrl=AdminPanel [R]
+
+#RewriteRule ^([^/]*)/([^/]*)?$ index.php?mod=$1&ctrl=$2 [L]
+#RewriteRule ^([^/]*)/([^/]*)/([^/]*)/([^/]*)?$ index.php?mod=$1&ctrl=$2&act=$3&$4 [L]
+
+
+
+#error documents
+ErrorDocument 404 "<body><div>ERROR 404 file not found :(</div></body>"
+ErrorDocument 403 "Access Denied!"
+#ErrorDocument 404 "<body><div>ERROR 404 file not found :(</div></body>"
+
+#protect directories listing
+Options -indexes
