@@ -1,0 +1,14 @@
+{
+    "name": "Miroslav/php-mvc",
+    "authors": [
+        {
+            "name": "Miroslav Milosevic",
+            "email": "m.maksa@gmail.com"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "*",
+        "rain/raintpl": "dev-master",
+        "smarty/smarty": "dev-trunk"
+    }
+}

@@ -3,6 +3,7 @@
 namespace Application;
 
 use Application\Request;
+use Application\View;
 
 class Router {
     
@@ -15,7 +16,6 @@ class Router {
     }
     
     public function dispatch() {
-      
         try {
             $this->_loadCtrl();
             $ctrlName = ucfirst(strtolower($this->_request->getController()));
@@ -24,7 +24,10 @@ class Router {
             $this->_ctrlInstance = new $ctrlName();
             $instance = $this->_ctrlInstance;
             if($this->_methodExists()) {
-                $instance->$act();
+                $content = $instance->$act();
+                $view = View::getInstance();
+//                $view = new View();
+                $view->setContent($content);
             }
         }
         catch(Exception $ex) {

@@ -4,6 +4,7 @@ namespace Application;
 
 use Application\Config;
 use Application\Router;
+use Application\View;
 
 class Application {
     

@@ -1,7 +1,7 @@
 <?php
 
     require BASE_DIR.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'Application'.DIRECTORY_SEPARATOR.'Autoload.php';
-    
+    require BASE_DIR.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'autoload.php';
     /**
      * Init autoloader
      */
