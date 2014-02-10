@@ -50,5 +50,18 @@ class View {
         echo $this->tEngine->fetch('../layout.tpl');        
     }
     
+    public function renderView($params) {
+        if(!is_array($params))
+        {
+            throw new Exception('controller must return array');
+        }
+        else {
+            foreach($params['vars'] as $key => $value) {
+                $this->tEngine->assign($key, $value);
+            }
+            return $this->tEngine->fetch($params['tpl']);
+        }
+    }
+    
 }
 

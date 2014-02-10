@@ -26,8 +26,7 @@ class Router {
             if($this->_methodExists()) {
                 $content = $instance->$act();
                 $view = View::getInstance();
-//                $view = new View();
-                $view->setContent($content);
+                $view->setContent($view->renderView($content));
             }
         }
         catch(Exception $ex) {
