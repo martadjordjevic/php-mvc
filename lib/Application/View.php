@@ -3,7 +3,6 @@
 namespace Application;
 
 use Rain\Tpl;
-use \Smarty;
 use Application\Request;
 
 class View {
@@ -53,13 +52,16 @@ class View {
     public function renderView($params) {
         if(!is_array($params))
         {
-            throw new Exception('controller must return array');
+            throw new \Exception('controller must return array');
         }
         else {
-            foreach($params['vars'] as $key => $value) {
-                $this->tEngine->assign($key, $value);
+            $template = isset($params['tpl']) ? $params['tpl'] : $this->_request->getAction().'.tpl';
+            if(isset($params['vars'])) {
+                foreach($params['vars'] as $key => $value) {
+                    $this->tEngine->assign($key, $value);
+                }
             }
-            return $this->tEngine->fetch($params['tpl']);
+            return $this->tEngine->fetch($template);
         }
     }
     

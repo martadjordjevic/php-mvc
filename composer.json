@@ -9,6 +9,7 @@
     "require": {
         "doctrine/orm": "*",
         "rain/raintpl": "dev-master",
-        "smarty/smarty": "dev-trunk"
+        "smarty/smarty": "dev-trunk",
+        "twitter/bootstrap": "3.0.*@dev"
     }
 }

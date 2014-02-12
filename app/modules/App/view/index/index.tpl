@@ -1,5 +1,6 @@
 <h2>Hello from smarty template engine</h2>
-<pre>{$test}</pre>
+<pre><b>Dump $arr:</b><br />{$arr|@var_dump}</pre>
+
 <b>
-    {$param}
+    <pre> {$test} <br /> {$param}</pre>
 </b>

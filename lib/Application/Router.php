@@ -30,7 +30,7 @@ class Router {
             }
         }
         catch(Exception $ex) {
-            echo $ex->getTraceAsString();
+            echo "<pre>".$ex->getTraceAsString()."</pre>";
         }
     }
     
@@ -52,6 +52,10 @@ class Router {
         else {
             throw new Exception('Action does not exists in'.$this->_request->getController(), '404', '');
         }
+    }
+    
+    public function redirect($url) {
+        header('Location: '.$url);
     }
     
 }

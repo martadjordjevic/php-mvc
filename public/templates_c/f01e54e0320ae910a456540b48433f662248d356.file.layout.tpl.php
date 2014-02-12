@@ -1,4 +1,29 @@
-<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1-DEV, created on 2014-02-10 21:15:55
+         compiled from "C:\xampp\htdocs\projects\php-mvc\app\modules\app\view\layout.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1041152f932c3c1f070-07719340%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'f01e54e0320ae910a456540b48433f662248d356' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\projects\\php-mvc\\app\\modules\\app\\view\\layout.tpl',
+      1 => 1392063354,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1041152f932c3c1f070-07719340',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1-DEV',
+  'unifunc' => 'content_52f932c3c46223_26295989',
+  'variables' => 
+  array (
+    'content' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_52f932c3c46223_26295989')) {function content_52f932c3c46223_26295989($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -110,7 +135,8 @@
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
-        {$content}
+        <?php echo $_smarty_tpl->tpl_vars['content']->value;?>
+
         <!-- FOOTER -->
         <footer>
           <p class="pull-right"><a href="#">Back to top</a></p>
@@ -122,3 +148,4 @@
     <script type="text/javascript" src="/js/docs.js"></script>
   </body>
 </html>
+<?php }} ?>

@@ -2,9 +2,8 @@
 
 namespace Application;
 
-use Application\Config;
 use Application\Router;
-use Application\View;
+use Application\Registry;
 
 class Application {
     
@@ -23,8 +22,9 @@ class Application {
     
     public function getConfig() {
         if($this->_config == null) {
-            $config = new Config(APPLICATION_PATH.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'application.ini');
-            $this->_config = $config->getConfig();
+            $this->_config = new Config(require BASE_DIR.DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'config.php');
+            $registry = Registry::getInstance();
+            $registry->set('config', $this->_config);
             return $this->_config;
         }
         else {
@@ -35,6 +35,10 @@ class Application {
     private function initRouter() {
         $this->_router = new Router();
         $this->_router->dispatch();
+    }
+    
+    public function _getEnvironment() {
+        return getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'production';
     }
     
 }
